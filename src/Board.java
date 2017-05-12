@@ -11,9 +11,9 @@ import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 
-public class Main extends Application {
+public class Board {
 
-    public void start(Stage primaryStage) {
+    public static void board(Stage primaryStage) {
         primaryStage.setTitle("Tile Match");
 
 
@@ -44,15 +44,7 @@ public class Main extends Application {
                 grid.add(btnList[i][j], i, j);
             }
         }
-
-
-
-
-        primaryStage.show();
+;
     }
 
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 }

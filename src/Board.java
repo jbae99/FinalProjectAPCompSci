@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
@@ -26,7 +27,7 @@ public class Board {
 
 
 
-        Scene scene = new Scene(grid, 500, 500);
+        Scene scene = new Scene(grid, 900, 900);
         primaryStage.setScene(scene);
 
 
@@ -38,12 +39,16 @@ public class Board {
             for (int j = 0; j < 6; j++)
             {
                 btnList[i][j] = new Button("Click Me!");
-                btnList[i][j].setMinHeight(100);
-                btnList[i][j].setMinWidth(100);
+                btnList[i][j].setPrefWidth(150);
+                btnList[i][j].setPrefHeight(150);
+
 
                 grid.add(btnList[i][j], i, j);
             }
         }
+
+
+
 ;
     }
 

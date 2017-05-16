@@ -7,7 +7,7 @@ public class Runner extends Application{
 
     Board.board(primaryStage);
 
-
+    long startTime = System.currentTimeMillis();
 
 
     primaryStage.show();

@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -37,8 +39,9 @@ public class Board {
         Scene scene = new Scene(rootPane, 900, 900);
         primaryStage.setScene(scene);
 
-        
+
         Button[][] btnList = new Button[6][6];
+        ImageView[][] imgList = new ImageView[6][6];
 
         for (int i = 0; i <6; i++)
         {
@@ -48,6 +51,7 @@ public class Board {
                 btnList[i][j].setPrefWidth(150);
                 btnList[i][j].setPrefHeight(150);
                 btns.add(btnList[i][j], i, j);
+
             }
         }
 

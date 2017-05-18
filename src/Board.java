@@ -41,15 +41,13 @@ public class Board {
                 btnList[i][j] = new Button("Click Me!");
                 btnList[i][j].setPrefWidth(150);
                 btnList[i][j].setPrefHeight(150);
-
-
                 grid.add(btnList[i][j], i, j);
             }
         }
 
 
 
-;
+
     }
 
 }

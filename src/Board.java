@@ -14,6 +14,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
+import java.util.Random;
+
 
 public class Board {
 
@@ -23,24 +25,26 @@ public class Board {
         StackPane rootPane = new StackPane();
 
 
-        Image a = new Image("bbtitle.jpg");
-        Image b = new Image("beetle.jpg");
-        Image c = new Image("csusm.jpg");
-        Image d = new Image("dog.jpg");
-        Image e = new Image("halo.jpg");
-        Image f = new Image("javacup.jpg");
-        Image g = new Image("johnny.jpg");
-        Image h = new Image("luigi.jpg");
-        Image i = new Image("mario.jpg");
-        Image j = new Image("mushroom.jpg");
-        Image k = new Image("origamiman.jpg");
-        Image l = new Image("panda.jpg");
-        Image m = new Image("Penguin.jpg");
-        Image n = new Image("shirmp.jpg");
-        Image o = new Image("skull.jpg");
-        Image p = new Image("walter.jpg");
-        Image q = new Image("weirdman.jpg");
-        Image r = new Image("weirdmovie.jpg");
+        Image img1 = new Image("bbtitle.jpg");
+        Image img2 = new Image("beetle.jpg");
+        Image img3 = new Image("csusm.jpg");
+        Image img4 = new Image("dog.jpg");
+        Image img5 = new Image("halo.jpg");
+        Image img6 = new Image("javacup.jpg");
+        Image img7 = new Image("johnny.jpg");
+        Image img8 = new Image("luigi.jpg");
+        Image img9 = new Image("mario.jpg");
+        Image img10 = new Image("mushroom.jpg");
+        Image img11 = new Image("origamiman.jpg");
+        Image img12 = new Image("panda.jpg");
+        Image img13 = new Image("Penguin.jpg");
+        Image img14 = new Image("shrimp.jpg");
+        Image img15 = new Image("skull.jpg");
+        Image img16 = new Image("walter.jpg");
+        Image img17 = new Image("weirdman.jpg");
+        Image img18 = new Image("weirdmovie.jpg");
+
+
 
 
         GridPane btns = new GridPane();
@@ -71,9 +75,28 @@ public class Board {
                 btnList[i][j].setPrefWidth(150);
                 btnList[i][j].setPrefHeight(150);
                 btns.add(btnList[i][j], i, j);
+            }
+        }
 
 
+        Random r = new Random();
 
+
+        for (int i = 0; i<3; i++)
+        {
+            for(int j = 0;j<6;j++)
+            {
+                imgList[i][j] =
+                pics.add(imgList[i][j], i, j);
+            }
+        }
+
+        for(int i = 0; 2 < i < 6;i++)
+        {
+            for(int j = 0;j<6;j++)
+            {
+                imgList[i][j] =
+                pics.add(imgList[i][j], i, j);
             }
         }
 

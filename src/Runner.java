@@ -21,13 +21,6 @@ public class Runner extends Application{
         primaryStage.show();
     }
 
-    public String timer()
-    {
-        Timer t = new Timer();
-
-
-    }
-
 
 
 }

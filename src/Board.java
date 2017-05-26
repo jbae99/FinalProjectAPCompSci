@@ -24,26 +24,44 @@ public class Board {
         primaryStage.setTitle("Tile Match");
 
         StackPane rootPane = new StackPane();
-        ArrayList<Image> imgs = new ArrayList<>();
+        ArrayList<ImageView> imgs = new ArrayList<>();
 
-        imgs.add(new Image("bbtitle.jpg"));
-        imgs.add(new Image("beetle.jpg"));
-        imgs.add(new Image("csusm.jpg"));
-        imgs.add(new Image("dog.jpg"));
-        imgs.add(new Image("halo.jpg"));
-        imgs.add(new Image("javacup.jpg"));
-        imgs.add(new Image("johnny.jpg"));
-        imgs.add(new Image("luigi.jpg"));
-        imgs.add(new Image("mario.jpg"));
-        imgs.add(new Image("mushroom.jpg"));
-        imgs.add(new Image("origamiman.jpg"));
-        imgs.add(new Image("panda.jpg"));
-        imgs.add(new Image("Penguin.jpg"));
-        imgs.add(new Image("shrimp.jpg"));
-        imgs.add(new Image("skull.jpg"));
-        imgs.add(new Image("walter.jpg"));
-        imgs.add(new Image("weirdman.jpg"));
-        imgs.add(new Image("weirdmovie.jpg"));
+        imgs.add(new ImageView("bbtitle.jpg"));
+        imgs.add(new ImageView("beetle.jpg"));
+        imgs.add(new ImageView("csusm.jpg"));
+        imgs.add(new ImageView("dog.jpg"));
+        imgs.add(new ImageView("halo.jpg"));
+        imgs.add(new ImageView("javacup.jpg"));
+        imgs.add(new ImageView("johnny.jpg"));
+        imgs.add(new ImageView("luigi.jpg"));
+        imgs.add(new ImageView("mario.jpg"));
+        imgs.add(new ImageView("mushroom.jpg"));
+        imgs.add(new ImageView("origamiman.jpg"));
+        imgs.add(new ImageView("panda.jpg"));
+        imgs.add(new ImageView("Penguin.jpg"));
+        imgs.add(new ImageView("shrimp.jpg"));
+        imgs.add(new ImageView("skull.jpg"));
+        imgs.add(new ImageView("walter.jpg"));
+        imgs.add(new ImageView("weirdman.jpg"));
+        imgs.add(new ImageView("weirdmovie.jpg"));
+        imgs.add(new ImageView("bbtitle.jpg"));
+        imgs.add(new ImageView("beetle.jpg"));
+        imgs.add(new ImageView("csusm.jpg"));
+        imgs.add(new ImageView("dog.jpg"));
+        imgs.add(new ImageView("halo.jpg"));
+        imgs.add(new ImageView("javacup.jpg"));
+        imgs.add(new ImageView("johnny.jpg"));
+        imgs.add(new ImageView("luigi.jpg"));
+        imgs.add(new ImageView("mario.jpg"));
+        imgs.add(new ImageView("mushroom.jpg"));
+        imgs.add(new ImageView("origamiman.jpg"));
+        imgs.add(new ImageView("panda.jpg"));
+        imgs.add(new ImageView("Penguin.jpg"));
+        imgs.add(new ImageView("shrimp.jpg"));
+        imgs.add(new ImageView("skull.jpg"));
+        imgs.add(new ImageView("walter.jpg"));
+        imgs.add(new ImageView("weirdman.jpg"));
+        imgs.add(new ImageView("weirdmovie.jpg"));
 
 
 
@@ -53,6 +71,7 @@ public class Board {
         btns.setHgap(1);
         btns.setVgap(1);
         btns.setPadding(new Insets(1,1,1,1));
+
         GridPane pics = new GridPane();
         pics.setAlignment(Pos.CENTER);
         pics.setHgap(1);
@@ -66,7 +85,7 @@ public class Board {
 
 
         Button[][] btnList = new Button[6][6];
-        Image[][] imgList = new Image[6][6];
+        ImageView[][] imgList = new ImageView[6][6];
 
         for (int i = 0; i <6; i++)
         {
@@ -80,30 +99,34 @@ public class Board {
         }
 
 
-        Random r = new Random();
-
-
-        for (int i = 0; i<3; i++)
+        for (int i = 0; i<6; i++)
         {
             for(int j = 0;j<6;j++)
             {
-                imgList[i][j] =
+                int r = (int) (Math.random()*imgs.size());
+                imgList[i][j] = retrieve(imgs, r);
+                imgList[i][j].setFitHeight(125);
+                imgList[i][j].setFitWidth(125);
+                imgList
+                remove(imgs, r);
                 pics.add(imgList[i][j], i, j);
             }
         }
-
-        for(int i = 0; 2 < i < 6;i++)
-        {
-            for(int j = 0;j<6;j++)
-            {
-                imgList[i][j] =
-                pics.add(imgList[i][j], i, j);
-            }
-        }
-
-
 
 
     }
 
+    public static ImageView retrieve(ArrayList<ImageView> imgs, int i)
+    {
+        return imgs.get(i);
+    }
+    public static void remove(ArrayList imgs, int i)
+    {
+        imgs.remove(i);
+    }
+
+    public Button[][] getBtnList(Button[][] btnList)
+    {
+        return btnList;
+    }
 }

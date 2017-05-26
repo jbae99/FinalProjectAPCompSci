@@ -14,6 +14,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -23,26 +24,26 @@ public class Board {
         primaryStage.setTitle("Tile Match");
 
         StackPane rootPane = new StackPane();
+        ArrayList<Image> imgs = new ArrayList<>();
 
-
-        Image img1 = new Image("bbtitle.jpg");
-        Image img2 = new Image("beetle.jpg");
-        Image img3 = new Image("csusm.jpg");
-        Image img4 = new Image("dog.jpg");
-        Image img5 = new Image("halo.jpg");
-        Image img6 = new Image("javacup.jpg");
-        Image img7 = new Image("johnny.jpg");
-        Image img8 = new Image("luigi.jpg");
-        Image img9 = new Image("mario.jpg");
-        Image img10 = new Image("mushroom.jpg");
-        Image img11 = new Image("origamiman.jpg");
-        Image img12 = new Image("panda.jpg");
-        Image img13 = new Image("Penguin.jpg");
-        Image img14 = new Image("shrimp.jpg");
-        Image img15 = new Image("skull.jpg");
-        Image img16 = new Image("walter.jpg");
-        Image img17 = new Image("weirdman.jpg");
-        Image img18 = new Image("weirdmovie.jpg");
+        imgs.add(new Image("bbtitle.jpg"));
+        imgs.add(new Image("beetle.jpg"));
+        imgs.add(new Image("csusm.jpg"));
+        imgs.add(new Image("dog.jpg"));
+        imgs.add(new Image("halo.jpg"));
+        imgs.add(new Image("javacup.jpg"));
+        imgs.add(new Image("johnny.jpg"));
+        imgs.add(new Image("luigi.jpg"));
+        imgs.add(new Image("mario.jpg"));
+        imgs.add(new Image("mushroom.jpg"));
+        imgs.add(new Image("origamiman.jpg"));
+        imgs.add(new Image("panda.jpg"));
+        imgs.add(new Image("Penguin.jpg"));
+        imgs.add(new Image("shrimp.jpg"));
+        imgs.add(new Image("skull.jpg"));
+        imgs.add(new Image("walter.jpg"));
+        imgs.add(new Image("weirdman.jpg"));
+        imgs.add(new Image("weirdmovie.jpg"));
 
 
 

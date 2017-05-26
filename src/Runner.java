@@ -13,6 +13,12 @@ public class Runner extends Application{
     primaryStage.show();
     }
 
+    public String getRemainingTime() {
+        int hours = (int) ((this.remainingTime / 3600000) % 60);
+        int minutes = (int) ((this.remainingTime / 60000) % 60);
+        int seconds = (int) ((this.remainingTime / 1000) % 60);
 
+        return (format.format(hours) + ":" + format.format(minutes) + ":" + format.format(seconds));
+    }
 }
 

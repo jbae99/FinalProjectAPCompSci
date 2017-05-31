@@ -22,6 +22,8 @@ public class Board {
 
     private static Button[][] btnList = new Button[6][6];
     private static ImageView[][] imgList = new ImageView[6][6];
+    private static GridPane btns = new GridPane();
+    private static GridPane pics = new GridPane();
 
     public static void board(Stage primaryStage) {
         primaryStage.setTitle("Tile Match");
@@ -67,15 +69,12 @@ public class Board {
         imgs.add(new ImageView("weirdmovie.jpg"));
 
 
-
-
-        GridPane btns = new GridPane();
         btns.setAlignment(Pos.CENTER);
         btns.setHgap(1);
         btns.setVgap(1);
         btns.setPadding(new Insets(1,1,1,1));
 
-        GridPane pics = new GridPane();
+
         pics.setAlignment(Pos.CENTER);
         pics.setHgap(1);
         pics.setVgap(1);
@@ -95,14 +94,7 @@ public class Board {
                 btnList[i][j].setPrefWidth(150);
                 btnList[i][j].setPrefHeight(150);
                 btns.add(btnList[i][j], i, j);
-            }
-        }
 
-
-        for (int i = 0; i<6; i++)
-        {
-            for(int j = 0;j<6;j++)
-            {
                 int r = (int) (Math.random()*imgs.size());
                 imgList[i][j] = retrieve(imgs, r);
                 imgList[i][j].setFitHeight(150);
@@ -112,7 +104,6 @@ public class Board {
                 pics.add(imgList[i][j], i, j);
             }
         }
-
 
     }
 

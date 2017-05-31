@@ -20,6 +20,9 @@ import java.util.Random;
 
 public class Board {
 
+    private static Button[][] btnList = new Button[6][6];
+    private static ImageView[][] imgList = new ImageView[6][6];
+
     public static void board(Stage primaryStage) {
         primaryStage.setTitle("Tile Match");
 
@@ -84,9 +87,6 @@ public class Board {
         primaryStage.setScene(scene);
 
 
-        Button[][] btnList = new Button[6][6];
-        ImageView[][] imgList = new ImageView[6][6];
-
         for (int i = 0; i <6; i++)
         {
             for (int j = 0; j < 6; j++)
@@ -105,9 +105,9 @@ public class Board {
             {
                 int r = (int) (Math.random()*imgs.size());
                 imgList[i][j] = retrieve(imgs, r);
-                imgList[i][j].setFitHeight(125);
-                imgList[i][j].setFitWidth(125);
-                imgList
+                imgList[i][j].setFitHeight(150);
+                imgList[i][j].setFitWidth(150);
+                imgList[i][j].setPreserveRatio(true);
                 remove(imgs, r);
                 pics.add(imgList[i][j], i, j);
             }
@@ -125,8 +125,12 @@ public class Board {
         imgs.remove(i);
     }
 
-    public Button[][] getBtnList(Button[][] btnList)
+    public Button[][] getBtnList()
     {
         return btnList;
+    }
+    public ImageView[][] getImgList()
+    {
+        return imgList;
     }
 }

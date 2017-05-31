@@ -10,7 +10,7 @@ import java.util.TimerTask;
 
 public class Runner extends Application{
     long startTime;
-    private int timecounter;
+    public int timecounter;
     public static void main(String[] args){
         launch(args);
     }

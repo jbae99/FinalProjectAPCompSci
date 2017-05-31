@@ -124,4 +124,13 @@ public class Board {
     {
         return imgList;
     }
+    public GridPane getBtns()
+    {
+        return btns;
+    }
+    public GridPane getPics()
+    {
+        return pics;
+    }
+
 }

@@ -8,7 +8,7 @@ import java.util.Timer;
 
 
 public class Runner extends Application{
-
+    long startTime;
     public static void main(String[] args){
         launch(args);
     }
@@ -16,7 +16,7 @@ public class Runner extends Application{
     public void start(Stage primaryStage) {
 
         Board.board(primaryStage);
-        long startTime = System.currentTimeMillis();
+        startTime = System.currentTimeMillis();
 
         primaryStage.show();
     }
@@ -41,7 +41,6 @@ public class Runner extends Application{
         long deltaTime = endTime - startTime;
         double secondsElapsed = deltaTime/1000.0;
     }
-
 
 
 }

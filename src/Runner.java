@@ -7,10 +7,13 @@ import javafx.util.Duration;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
 public class Runner extends Application{
     long startTime;
     public int timecounter;
+    Timer t;
+    TimerTask task;
+    Duration secondsElapsed;
+
     public static void main(String[] args){
         launch(args);
     }
@@ -20,31 +23,41 @@ public class Runner extends Application{
         Board.board(primaryStage);
         startTime = System.currentTimeMillis();
 
+
+        Controller cntrl = new Controller();
+
         primaryStage.show();
+
+
     }
 
-    public String timer()
+
+    public void timer()
     {
         Timer t = new Timer();
-       timecounter = 0;
-        TimerTask one = new TimerTask();
-        t.scheduleAtFixedRate(new TimerTask() {
-            public void run() {
-             setTimeCounter(getTimeCounter()+1);
-            }
-        }
-    public int getTimeCounter(){
+        timecounter = 0;
+    }
+
+    public void run() {
+        setTimeCounter(getTimeCounter() + 1);
+    }
+
+    public int getTimeCounter() {
         return timecounter;
     }
 
-    public void setTimeCounter(int timecounter){
+    public void setTimeCounter(int timecounter) {
         this.timecounter = timecounter;
+
     }
-                t.cancel();
+
+    public double duration()
+    {
+        t.cancel();
         long endTime = System.currentTimeMillis();
         long deltaTime = endTime - startTime;
-        double secondsElapsed = deltaTime/1000.0;
-        return deltaTime;
+        double secondsElapsed = deltaTime / 1000.0;
+        return secondsElapsed;
     }
 
 

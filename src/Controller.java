@@ -26,8 +26,7 @@ import javafx.scene.layout.Background;
 
 
 public class Controller extends Board {
-    public void Controller() {
-
+    public Controller() {
 
         ObservableList<Node> btns = super.getBtns().getChildren();
 
@@ -50,6 +49,7 @@ public class Controller extends Board {
                 //btns.getChildren().get(cntr++).setDisable(false);
             });
         }
+
      /* @Override
     public Button[][] getBtnList(Button[][] btnList) {
         return super.getBtnList(btnList);
@@ -72,4 +72,5 @@ public class Controller extends Board {
     }
     */
     }
+
 }

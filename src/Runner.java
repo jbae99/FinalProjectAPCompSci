@@ -12,6 +12,7 @@ import javafx.animation.KeyFrame;
 import java.util.Timer;
 import java.util.TimerTask;
 
+<<<<<<< HEAD
 
 public class Runner extends Application {
     long startTime;
@@ -22,6 +23,16 @@ public class Runner extends Application {
     Duration secondsElapsed;
 
     public static void main(String[] args) {
+=======
+public class Runner extends Application{
+    long startTime;
+    public int timecounter;
+    Timer t;
+    TimerTask task;
+    Duration secondsElapsed;
+
+    public static void main(String[] args){
+>>>>>>> origin/master
         launch(args);
     }
 
@@ -35,10 +46,22 @@ public class Runner extends Application {
         Button button = new Button();
         button.setText("Start Timer");
 
+
+        Controller cntrl = new Controller();
+
         primaryStage.show();
+
+
     }
 
+<<<<<<< HEAD
     public void timer(Timer t){
+=======
+
+    public void timer()
+    {
+        Timer t = new Timer();
+>>>>>>> origin/master
         timecounter = 0;
     }
 

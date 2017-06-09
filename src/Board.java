@@ -76,8 +76,8 @@ public class Board {
 
 
         pics.setAlignment(Pos.CENTER);
-        pics.setHgap(1);
-        pics.setVgap(1);
+        pics.setHgap(10);
+        pics.setVgap(10);
         pics.setPadding(new Insets(1,1,1,1));
 
         rootPane.getChildren().addAll(pics, btns);
@@ -97,8 +97,8 @@ public class Board {
 
                 int r = (int) (Math.random()*imgs.size());
                 imgList[i][j] = retrieve(imgs, r);
-                imgList[i][j].setFitHeight(150);
-                imgList[i][j].setFitWidth(150);
+                imgList[i][j].setFitHeight(140);
+                imgList[i][j].setFitWidth(140);
                 imgList[i][j].setPreserveRatio(true);
                 remove(imgs, r);
                 pics.add(imgList[i][j], i, j);

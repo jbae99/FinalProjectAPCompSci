@@ -18,6 +18,9 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javafx.event.EventHandler;
 //import java.util.Random;
 import javafx.scene.input.MouseEvent;
@@ -26,21 +29,65 @@ import javafx.scene.layout.Background;
 
 
 public class Controller extends Board {
-    public Controller() {
 
+    public Controller(){
+
+    }
+    public Controller(int i){
         ObservableList<Node> btns = super.getBtns().getChildren();
+        Controller cntrl = new Controller();
 
-        for (Node btn : btns) {
-            btn.setOnMouseClicked(me -> {
-                if (btn.isVisible()) {
-                    btn.setVisible(false);
-                    btn.toFront();
-                } else
-                    btn.setVisible(true);
-
-            });
+        for(Node btn : btns)
+        {
+            btn.setOnMouseClicked(me ->
+                    cntrl.click());
         }
-        int cntr = 0;
+
+    }
+
+
+
+    public void click() {
+
+        Button[][] btnList = super.getBtnList();
+        ImageView[][] imgList = super.getImgList();
+        Timer timer = new Timer();
+
+
+        for (int k = 0; k < 6; k++) {
+            for (int l = 0; l < 6; l++) {
+                    for (int i = 0; i < 6; i++) {
+                        for (int j = 0; j < 6; j++) {
+                            if (btnList[k][l].isVisible() && btnList[i][j].isVisible()) {
+                                btnList[k][l].setVisible(false);
+                                btnList[k][l].toFront();
+                            }
+                            else if (btnList[k][l].isVisible() && !btnList[i][j].isVisible())
+                            {
+                                if (imgList[i][j] == imgList[k][l])
+                                {
+                                    btnList[k][l].setVisible(false);
+                                    btnList[i][j].setVisible(false);
+                                }
+                                else
+                                {
+
+                                    btnList[k][l].setVisible(true);
+                                    btnList[i][j].setVisible(true);
+                                }
+                            }
+                            else
+                            {
+                                btnList[k][l].setVisible(true);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+       /* int cntr = 0;
 
         ObservableList<Node> pics = super.getPics().getChildren();
         for (Node pic : pics) {
@@ -49,28 +96,6 @@ public class Controller extends Board {
                 //btns.getChildren().get(cntr++).setDisable(false);
             });
         }
+        */
 
-     /* @Override
-    public Button[][] getBtnList(Button[][] btnList) {
-        return super.getBtnList(btnList);
-    }
 
-    public setOnAction(event -> MouseEvent)
-    {
-
-        Button[][][][] btnList;
-        int i;
-        int j;
-        if (getBtnList(btnList[i][j]).isSelected()) {
-            btnList[i][j].setDisable(true);
-        }
-
-        else
-        {
-            Button.setDisable(true);
-        }
-    }
-    */
-    }
-
-}

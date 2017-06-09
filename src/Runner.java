@@ -24,7 +24,7 @@ public class Runner extends Application{
         startTime = System.currentTimeMillis();
 
 
-        Controller cntrl = new Controller();
+        Controller cntrl = new Controller(4);
 
         primaryStage.show();
 
